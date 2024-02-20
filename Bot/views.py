@@ -2,15 +2,15 @@ from django.shortcuts import render,HttpResponse
 from django.http import JsonResponse
 import openai
 
-def index(request):
-    return render(request,'chat.html')
+def chat(request):
+    return render(request,'index.html')
 
 def chatAPI(request):
     if request.method == "POST":
         prompt = request.POST.get("prompt", "")
         if not prompt:
             return JsonResponse({'error': 'Prompt cannot be empty'})
-        openai.api_key = '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'
+        openai.api_key = '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'
         try:
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
