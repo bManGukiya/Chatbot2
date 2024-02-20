@@ -3,7 +3,7 @@ from django.http import JsonResponse
 import openai
 
 def chat(request):
-    return render(request,'index.html')
+    return render(request,'chat.html')
 
 def chatAPI(request):
     if request.method == "POST":
